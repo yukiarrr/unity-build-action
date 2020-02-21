@@ -1,0 +1,30 @@
+name: "Unity Build"
+description: "Build Android, iOS, Mac, Windows, and WebGL"
+inputs:
+  unity-version:
+    description: "For example, 2018.4.16f1"
+    required: true
+  unity-license-base64:
+    description: "Base64 encoded manualLicenseFile"
+    required: true
+  build-target:
+    description: "Choose Android, iOS, Mac, Windows, or WebGL"
+    required: true
+  project-path:
+    description: "Unity project path"
+    required: false
+    default: .
+  execute-method:
+    description: "Use by -executeMethod"
+    required: false
+    default: UnityBuild.BatchBuild.Build
+  output-path:
+    description: "Output path of default execute-method"
+    required: false
+    default: Output
+  command-args:
+    description: "Build command args"
+    required: false
+runs:
+  using: "node12"
+  main: "index.js"
