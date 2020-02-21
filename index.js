@@ -1,5 +1,5 @@
 const core = require("@actions/core");
-const childProcess = require("child_process");
+const exec = require("@actions/exec");
 
 process.env.UNITY_VERSION = core.getInput("unity-version");
 process.env.UNITY_LICENSE_BASE64 = core.getInput("unity-license-base64");
@@ -9,7 +9,4 @@ process.env.EXECUTE_METHOD = core.getInput("execute-method");
 process.env.OUTPUT_PATH = core.getInput("output-path");
 process.env.COMMAND_ARGS = core.getInput("command-args");
 
-childProcess.spawnSync("/bin/bash", [`${__dirname}/build.sh`], {
-  stdio: [process.stdin, process.stdout, process.stderr],
-  encoding: "utf-8"
-});
+await exec.exec(`/bin/bash ${__dirname}/build.sh`);
