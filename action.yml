@@ -4,8 +4,14 @@ inputs:
   unity-version:
     description: "For example, 2018.4.16f1"
     required: true
-  unity-license-base64:
-    description: "Base64 encoded manualLicenseFile"
+  unity-username:
+    description: "Unity username"
+    required: true
+  unity-password:
+    description: "Unity password"
+    required: true
+  unity-serial:
+    description: "Unity serial"
     required: true
   build-target:
     description: "Choose Android, iOS, Mac, Windows, or WebGL"

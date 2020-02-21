@@ -12,8 +12,7 @@ sudo u3d install $UNITY_VERSION -p Unity,${BUILD_TARGET}
 script_path=$(cd $(dirname $0); pwd)
 rsync -a ${script_path}/Assets/ ${PROJECT_PATH}/Assets/
 
-echo $UNITY_LICENSE_BASE64 | base64 --decode > Unity.ulf
-u3d -u $UNITY_VERSION -- -batchmode -nographics -quit -silent-crashes -logFile -manualLicenseFile Unity.ulf || true
+u3d -u $UNITY_VERSION -- -batchmode -nographics -quit -silent-crashes -logFile -username $UNITY_USERNAME -password $UNITY_PASSWORD -serial $UNITY_SERIAL || true
 
 set +e
 u3d -u $UNITY_VERSION -- -projectPath $PROJECT_PATH -batchmode -nographics -quit -silent-crashes -logFile editor.log -buildTarget $BUILD_TARGET -executeMethod $EXECUTE_METHOD -outputPath $OUTPUT_PATH $COMMAND_ARGS
