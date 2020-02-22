@@ -13,9 +13,7 @@ script_path=$(cd $(dirname $0); pwd)
 rsync -a ${script_path}/Assets/ ${PROJECT_PATH}/Assets/
 
 set +e
-u3d -u $UNITY_VERSION -- -batchmode -nographics -quit -silent-crashes -logFile editor.log -username $UNITY_USERNAME -password $UNITY_PASSWORD -serial $UNITY_SERIAL
-cat editor.log
-u3d -u $UNITY_VERSION -- -projectPath $PROJECT_PATH -batchmode -nographics -quit -silent-crashes -logFile editor.log -buildTarget $BUILD_TARGET -executeMethod $EXECUTE_METHOD -outputPath $OUTPUT_PATH $COMMAND_ARGS
+u3d -u $UNITY_VERSION -- -projectPath $PROJECT_PATH -batchmode -nographics -quit -silent-crashes -logFile editor.log -username $UNITY_USERNAME -password $UNITY_PASSWORD -serial $UNITY_SERIAL -buildTarget $BUILD_TARGET -executeMethod $EXECUTE_METHOD -outputPath $OUTPUT_PATH $COMMAND_ARGS
 exit_code=$?
 cat editor.log
 u3d -u $UNITY_VERSION -- -batchmode -nographics -quit -silent-crashes -logFile editor.log -returnlicense
