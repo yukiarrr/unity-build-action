@@ -1,4 +1,4 @@
-name: "Unity Build"
+name: "Unity Build Action"
 description: "Build Android, iOS, Mac, Windows, and WebGL"
 inputs:
   unity-version:
