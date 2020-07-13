@@ -43,10 +43,11 @@ if [ ! `echo $("$unity_hub_path" -- --headless editors --installed) | grep $UNIT
 fi
 
 script_path=$(cd $(dirname $0); pwd)
-cp -rT "${script_path}/Assets/" "${PROJECT_PATH}/Assets/"
+project_path=$(cd "$PROJECT_PATH"; pwd)
+cp -r "${script_path}/Assets/." "${project_path}/Assets"
 
 set +e
-"$unity_path" -projectPath "$PROJECT_PATH" -batchmode -nographics -quit -silent-crashes -logFile editor.log -username $UNITY_USERNAME -password $UNITY_PASSWORD -serial $UNITY_SERIAL -buildTarget $BUILD_TARGET -executeMethod $EXECUTE_METHOD -outputPath "$OUTPUT_PATH" $COMMAND_ARGS
+"$unity_path" -projectPath "$project_path" -batchmode -nographics -quit -silent-crashes -logFile editor.log -username $UNITY_USERNAME -password $UNITY_PASSWORD -serial $UNITY_SERIAL -buildTarget $BUILD_TARGET -executeMethod $EXECUTE_METHOD -outputPath "$OUTPUT_PATH" $COMMAND_ARGS
 exit_code=$?
 cat editor.log
 exit $exit_code
