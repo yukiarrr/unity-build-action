@@ -14,7 +14,10 @@ inputs:
     description: "Unity serial"
     required: true
   build-target:
-    description: "Choose Android, iOS, Mac, Windows, or WebGL"
+    description: "Choose android, ios, windows, webgl, etc"
+    required: true
+  changeset:
+    description: "Required for Unity Hub, available at the bottom of Unity's Release Note"
     required: true
   project-path:
     description: "Unity project path"

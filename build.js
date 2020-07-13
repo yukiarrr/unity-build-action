@@ -8,6 +8,7 @@ async function run() {
     process.env.UNITY_PASSWORD = core.getInput("unity-password");
     process.env.UNITY_SERIAL = core.getInput("unity-serial");
     process.env.BUILD_TARGET = core.getInput("build-target");
+    process.env.CHANGESET = core.getInput("changeset");
     process.env.PROJECT_PATH = core.getInput("project-path");
     process.env.EXECUTE_METHOD = core.getInput("execute-method");
     process.env.OUTPUT_PATH = core.getInput("output-path");
