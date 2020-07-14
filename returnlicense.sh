@@ -8,5 +8,4 @@ elif [ "$(uname -s | cut -c -5)" = 'MINGW' -o "$(uname -s | cut -c -7)" = 'MSYS_
   unity_path="C:/Program Files/Unity/Hub/Editor/${UNITY_VERSION}/Unity.exe"
 fi
 
-"$unity_path" -batchmode -nographics -quit -silent-crashes -logFile editor.log -returnlicense
-cat editor.log
+"$unity_path" -batchmode -nographics -quit -silent-crashes -logFile -returnlicense
