@@ -6,7 +6,7 @@ if [ "$(uname)" = 'Darwin' ]; then
     hdiutil mount UnityHubSetup.dmg
     current_path=$(pwd)
     cd '/Volumes/Unity Hub'*
-    ditto 'Unity Hub.app' '/Applications/Unity Hub.app'
+    sudo ditto 'Unity Hub.app' '/Applications/Unity Hub.app'
     cd "$current_path"
     hdiutil detach '/Volumes/Unity Hub'*
     rm -f UnityHubSetup.dmg
