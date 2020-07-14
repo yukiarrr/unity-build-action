@@ -46,4 +46,5 @@ script_path=$(cd $(dirname $0); pwd)
 project_path=$(cd "$PROJECT_PATH"; pwd)
 cp -r "${script_path}/Assets/." "${project_path}/Assets"
 
-"$unity_path" -projectPath "$project_path" -batchmode -nographics -quit -silent-crashes -logFile -username $UNITY_USERNAME -password $UNITY_PASSWORD -serial $UNITY_SERIAL -buildTarget $BUILD_TARGET -executeMethod $EXECUTE_METHOD -outputPath "$OUTPUT_PATH" $COMMAND_ARGS
+"$unity_path" -batchmode -nographics -quit -silent-crashes -logFile -username $UNITY_USERNAME -password $UNITY_PASSWORD -serial $UNITY_SERIAL
+"$unity_path" -projectPath "$project_path" -batchmode -nographics -quit -silent-crashes -logFile -buildTarget $BUILD_TARGET -executeMethod $EXECUTE_METHOD -outputPath "$OUTPUT_PATH" $COMMAND_ARGS
