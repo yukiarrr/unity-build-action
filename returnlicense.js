@@ -5,7 +5,7 @@ async function run() {
   try {
     process.env.UNITY_VERSION = core.getInput("unity-version");
 
-    await exec.exec(`/bin/bash ${__dirname}/returnlicense.sh`);
+    await exec.exec(`bash ${__dirname}/returnlicense.sh`);
   } catch (error) {
     core.setFailed(error.message);
   }
