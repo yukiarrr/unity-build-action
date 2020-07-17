@@ -2,7 +2,7 @@
 
 This action build Unity project.
 
-And, can run on Linux, Mac, Windows, or any VM.
+And, can run on Linux, Mac, Windows, or self-hosted.
 
 ## Inputs
 
