@@ -42,6 +42,12 @@ Output path of default execute-method. Default `Output`.
 
 Build command args.
 
+## Contributions Welcome!
+
+If you have any other inputs you'd like to add, feel free to create PR.
+
+Welcome your contributions!
+
 ## Example usage
 
 ### Unity Build
