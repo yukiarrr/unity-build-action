@@ -1,13 +1,23 @@
 #!/bin/bash -e
 
-if ! type u3d > /dev/null 2>&1; then
-  sudo gem install u3d
-  export LC_ALL=en_US.UTF-8
-  export LANG=en_US.UTF-8
-  [ "$(uname -s | cut -c -5)" = 'Linux' ] && sudo u3d dependencies
+sudo_gem='gem'
+sudo_u3d='u3d'
+if type sudo > /dev/null 2>&1; then
+  sudo_gem="sudo $sudo_gem"
+  sudo_u3d="sudo $sudo_u3d"
 fi
 
-sudo u3d install $UNITY_VERSION -p Unity,${BUILD_TARGET}
+if ! type u3d > /dev/null 2>&1; then
+  $sudo_gem install u3d
+  export LC_ALL=en_US.UTF-8
+  export LANG=en_US.UTF-8
+  if [ "$(uname -s | cut -c -5)" = 'Linux' ]; then
+    sudo apt-get install -y libglu1-mesa
+    $sudo_u3d dependencies
+  fi
+fi
+
+[ ! "$(u3d list | grep $UNITY_VERSION)" ] && $sudo_u3d install $UNITY_VERSION -p Unity,${BUILD_TARGET}
 
 script_path=$(cd $(dirname $0); pwd)
 rsync -a ${script_path}/Assets/ ${PROJECT_PATH}/Assets/
