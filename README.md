@@ -24,7 +24,11 @@ And, can run on Linux, Mac, Windows, or any VM.
 
 ### `build-target`
 
-**Required** Choose `Android`, `iOS` `Mac`, `Windows`, or `WebGL`.
+**Required** Choose `android`, `ios` `windows`, `webgl`, etc.
+
+### `changeset`
+
+**Required** Required for Unity Hub, available at the bottom of Unity's Release Note.
 
 ### `project-path`
 
@@ -54,6 +58,7 @@ Build command args.
     unity-password: ${{ secrets.UNITY_PASSWORD }}
     unity-serial: ${{ secrets.UNITY_SERIAL }}
     build-target: iOS
+    changeset: 59ddc4c59b4f
 ```
 
 ### And export ipa
@@ -66,6 +71,7 @@ Build command args.
     unity-password: ${{ secrets.UNITY_PASSWORD }}
     unity-serial: ${{ secrets.UNITY_SERIAL }}
     build-target: iOS
+    changeset: 59ddc4c59b4f
 - uses: yukiarrr/ios-build-action@v0.5.0
   with:
     project-path: Output/Unity-iPhone.xcodeproj
