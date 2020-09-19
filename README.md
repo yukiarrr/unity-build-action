@@ -72,7 +72,7 @@ Welcome your contributions!
     unity-password: ${{ secrets.UNITY_PASSWORD }}
     unity-serial: ${{ secrets.UNITY_SERIAL }}
     build-target: iOS
-- uses: yukiarrr/ios-build-action@v1.0.0
+- uses: yukiarrr/ios-build-action@v1.2.0
   with:
     project-path: Output/Unity-iPhone.xcodeproj
     p12-base64: ${{ secrets.P12_BASE64 }}
