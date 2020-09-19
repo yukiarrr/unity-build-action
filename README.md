@@ -53,7 +53,7 @@ Welcome your contributions!
 ### Unity Build
 
 ```yaml
-- uses: yukiarrr/unity-build-action@v0.6.0
+- uses: yukiarrr/unity-build-action@v0.6.1
   with:
     unity-version: 2018.4.12f1
     unity-username: ${{ secrets.UNITY_USERNAME }}
@@ -65,7 +65,7 @@ Welcome your contributions!
 ### And export ipa
 
 ```yaml
-- uses: yukiarrr/unity-build-action@v0.6.0
+- uses: yukiarrr/unity-build-action@v0.6.1
   with:
     unity-version: 2018.4.12f1
     unity-username: ${{ secrets.UNITY_USERNAME }}
