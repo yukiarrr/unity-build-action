@@ -1,5 +1,5 @@
 name: "Unity Build Action"
-description: "Build Android, iOS, Mac, Windows, and WebGL"
+description: "Build Unity project, and can run on Linux, Mac, Windows, or self-hosted"
 inputs:
   unity-version:
     description: "For example, 2018.4.16f1"
