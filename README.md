@@ -53,7 +53,7 @@ Welcome your contributions!
 ### Unity Build
 
 ```yaml
-- uses: yukiarrr/unity-build-action@v0.6.0
+- uses: yukiarrr/unity-build-action@v0.6.1
   with:
     unity-version: 2018.4.12f1
     unity-username: ${{ secrets.UNITY_USERNAME }}
@@ -65,14 +65,14 @@ Welcome your contributions!
 ### And export ipa
 
 ```yaml
-- uses: yukiarrr/unity-build-action@v0.6.0
+- uses: yukiarrr/unity-build-action@v0.6.1
   with:
     unity-version: 2018.4.12f1
     unity-username: ${{ secrets.UNITY_USERNAME }}
     unity-password: ${{ secrets.UNITY_PASSWORD }}
     unity-serial: ${{ secrets.UNITY_SERIAL }}
     build-target: iOS
-- uses: yukiarrr/ios-build-action@v1.0.0
+- uses: yukiarrr/ios-build-action@v1.2.0
   with:
     project-path: Output/Unity-iPhone.xcodeproj
     p12-base64: ${{ secrets.P12_BASE64 }}
